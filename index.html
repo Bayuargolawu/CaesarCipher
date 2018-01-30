@@ -10,10 +10,10 @@
     <body>
         <div class="py-3 container">
             <div class="row">
-                
+
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="card-group">
                         <div class="card">
                             <div class="card-body">
@@ -21,7 +21,8 @@
                                 <div class="form-group">
                                     <label for="key-select">Key</label>
                                     <select class="form-control" id="key-select">
-                                        <option>1</option>
+                                        <option>0</option>
+                                        <option selected="selected">1</option>
                                         <option>2</option>
                                         <option>3</option>
                                         <option>4</option>
@@ -46,11 +47,10 @@
                                         <option>23</option>
                                         <option>24</option>
                                         <option>25</option>
-                                        <option>26</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="method-select">Text encode/decode</label>
+                                    <label for="method-select">Option</label>
                                     <select class="form-control" id="method-select">
                                         <option>Cipher</option>
                                         <option>Decipher</option>
@@ -60,7 +60,10 @@
                                     <label for="input-text">Text input</label>
                                     <textarea pattern="^[a-zA-Z]" class="form-control" id="input-text" rows="3"></textarea>
                                 </div>
-                                <button type="submit" id="button-encode" class="btn btn-primary">Encode</button>
+                                <div style="text-align: right;">
+                                    <button type="submit" id="button-bruteforce" class="btn btn-warning">Bruteforce decode</button>
+                                    <button type="submit" id="button-encode" class="btn btn-primary">Run</button>
+                                </div>
                                 <hr>
                                 <div class="form-group">
                                     <label for="output-text">Text output</label>
@@ -71,10 +74,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div id="bruteforce-results" class="card-group">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>Bruteforce results</h3>
+                                <p>From most likely to less (works for english plaintext only).</p>
+                                <div id="table-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="tablebuilder.js"></script>
+        <script src="franc-min.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
